@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OriginalApplication</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <a href="/">メモアプリ</a>
+        <a href="/projects/new">新規プロジェクト登録</a>
+      </div>
+      </header>
+    <%= yield %>
+  </body>
+  
+  <footer>
+    original.application.com
+  </footer>
+
+</html>

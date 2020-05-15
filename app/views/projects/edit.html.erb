@@ -1,0 +1,20 @@
+    <div class=body-contents>
+       <div class="new-projects">プロジェクト編集</div>
+       <%= form_for @project do |f| %>
+
+      <P>
+      <%= f.label :project %>
+      <%= f.text_field :project %>
+      </P>
+
+      <p>
+      <%= f.label :detail %>
+      <%= f.text_area :detail %>
+      </p>
+
+      <p>
+      <%= f.submit :タスクを更新 %>
+      </p>
+
+       <% end %>
+    </div>

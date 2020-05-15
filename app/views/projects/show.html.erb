@@ -1,0 +1,26 @@
+    <div class=body-contents>
+      <a href="/" class="btn-square-emboss">TOPページに戻る</a>
+      <div class="project-title"><%= @project.project %></div>
+      
+      <a href="<%= @project.id %>/edit" class="btn-square-emboss">プロジェクトの編集</a>
+      <%= link_to("削除", "#{@project.id}", method: :delete, class: "btn-square-emboss") %>
+      <a href="<%= @project.id %>/tasks/new" class="btn-square-emboss">タスクの登録</a>
+
+        <div class="tasks">
+          <p>概要：<%= @project.detail %></p>
+          <div class="items">
+            <p>タスク</p><p>期限</p><p>詳細</p>
+          </div>
+          <% @project.tasks.each do |task| %>
+          <div class="task">
+            <div class="task-contents">
+              <p><%= task.title %></p><p><%= task.datetime %></p><p><%= task.detail %></p>
+            </div>
+            <div class="task-options">
+                <a href="<%= task.project_id %>/tasks/<%= task.id %>/edit">編集</a>
+                <%= link_to '完了', "#{task.project_id}/tasks/#{task.id}", method: :delete, data: { confirm: "削除しますか？" }%>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>

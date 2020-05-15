@@ -1,0 +1,8 @@
+    <div class=body-contents>
+       <div class="new-projects">プロジェクト登録</div>
+      <%= form_tag('/projects',method: :post) do %>
+          <p><input type="text" name="project" class="hoge" placeholder="タイトル" /></p>
+          <p><textarea type="text"  name="detail" class="hoge" placeholder="詳細を記入してください" rows="10" cols="53" /></textarea></p>
+          <p><div class="submit"><input type="submit" value="追加"></div></p>
+      <% end %>
+    </div>

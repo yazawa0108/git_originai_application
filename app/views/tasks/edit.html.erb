@@ -1,0 +1,25 @@
+    <div class=body-contents>
+       <div class="new-tasks">タスク編集</div>
+      <%= form_for [@project, @task] do |f| %>
+      <P>
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "タイトル" %>
+      </P>
+      
+      <p>
+      <%= f.label :detail %>
+      <%= f.text_area :detail, placdeholder: "タスクの詳細" %>
+      </p>
+      
+      <p>
+      <label class="control-label" for="">作成期限</label>
+      <%= f.date_select :datetime, {}, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= f.submit :タスクを更新 %>
+      </p>
+      
+      <% end %>
+    </div>
+

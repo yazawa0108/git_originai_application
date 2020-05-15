@@ -1,0 +1,28 @@
+    <div class=body-contents>
+      <ul>
+      <% @projects.each do |project| %>
+        <li class="tab"><%= project.project %></li>
+      <% end %>
+      </ul>
+      
+      <div class="contents">
+        <% @projects.each do |project| %>
+          <div class="one-pj">      
+            <div class="items">
+              <p>タスク　　　　期限</p>
+              <% project.tasks.each do |task| %>
+                <div class="task">
+                  <p><%= task.title %>      <%= task.datetime %> </p>
+                </div>
+              <% end %>
+              <ul>
+              <a href="/projects/<%= project.id %>" class="btn-square-emboss">プロジェクト詳細</a>
+              <a href="/projects/<%= project.id %>/tasks/new" class="btn-square-emboss">タスクの登録</a>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  
+    </div>
+
