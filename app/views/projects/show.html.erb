@@ -18,7 +18,7 @@
             </div>
             <div class="task-options">
                 <a href="<%= task.project_id %>/tasks/<%= task.id %>/edit">編集</a>
-                <%= link_to '完了', "#{task.project_id}/tasks/#{task.id}", method: :delete, data: { confirm: "削除しますか？" }%>
+                <%= link_to '削除', "#{task.project_id}/tasks/#{task.id}", method: :delete, data: { confirm: "本当に削除しますか？" }%>
             </div>
           </div>
           <% end %>
